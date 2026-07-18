@@ -4,11 +4,11 @@ export default function Logo({ className = '' }) {
   return (
     <Link
       to="/"
-      className={`group flex items-center gap-3 font-heading font-extrabold text-xl tracking-tight text-ink ${className}`}
+      className={`group flex items-center gap-2 sm:gap-3 font-heading font-extrabold text-lg sm:text-xl tracking-tight text-ink ${className}`}
       aria-label="PAM AI Solutions home"
     >
-      <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-premium transition-transform group-hover:scale-110">
-        <svg width="22" height="22" viewBox="0 0 64 64" fill="none">
+      <div className="relative flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-primary shadow-premium transition-transform group-hover:scale-110">
+        <svg width="18" height="18" viewBox="0 0 64 64" fill="none" className="sm:w-[22px] sm:h-[22px]">
            <path
             d="M32 8L52 20V44L32 56L12 44V20L32 8Z"
             stroke="white"

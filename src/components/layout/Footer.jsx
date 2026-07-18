@@ -120,13 +120,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 pt-10 border-t border-surface flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <p className="text-[14px] text-ink-muted">
+        <div className="mt-20 pt-10 border-t border-surface flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <p className="text-[14px] text-ink-muted text-center lg:text-left">
             © {new Date().getFullYear()} {SITE.name}. Built for the future.
           </p>
-          <div className="flex flex-wrap items-center gap-8">
+          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-6 gap-y-3">
             {FOOTER_LINKS.legal.map((link) => (
-              <Link key={link.to} to={link.to} className="text-[14px] text-ink-muted hover:text-primary">
+              <Link key={link.to} to={link.to} className="text-[14px] text-ink-muted hover:text-primary whitespace-nowrap">
                 {link.label}
               </Link>
             ))}

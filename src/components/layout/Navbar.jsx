@@ -23,8 +23,10 @@ export default function Navbar() {
       <Container>
         <div
           className={cn(
-            'flex items-center justify-between rounded-2xl px-6 py-2.5 transition-all duration-500 border border-white/20 shadow-premium',
-            scrolled ? 'bg-white/70 backdrop-blur-xl' : 'bg-white/40 backdrop-blur-md',
+            'flex items-center justify-between rounded-2xl px-4 sm:px-6 py-2 transition-all duration-500 border border-white/20 shadow-premium',
+            scrolled
+              ? 'bg-white/90 backdrop-blur-md sm:backdrop-blur-xl'
+              : 'bg-white/40 backdrop-blur-none sm:backdrop-blur-md',
           )}
         >
           <Logo />
@@ -63,7 +65,7 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
-            className="flex h-11 w-11 items-center justify-center rounded-xl bg-surface/50 text-ink lg:hidden border border-white/40"
+            className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-surface/50 text-ink lg:hidden border border-white/40"
           >
             <Menu size={22} />
           </button>

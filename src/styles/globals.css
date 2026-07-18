@@ -9,10 +9,16 @@
 
   html {
     scroll-behavior: smooth;
+    /* Prevent horizontal overflow scrolling on mobile */
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-bg text-ink-muted font-body antialiased;
+    overflow-x: hidden;
+    width: 100%;
+    /* Smooth touch scrolling */
+    -webkit-overflow-scrolling: touch;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -25,20 +31,27 @@
 }
 
 @layer components {
-  .section-py {
-    @apply py-[50px] sm:py-[70px] lg:py-[100px];
+  .container-px {
+    @apply px-5 sm:px-6 lg:px-8;
   }
 
+  .section-py {
+    @apply py-14 sm:py-20 lg:py-24;
+  }
+
+  /* Performance optimization: Disable blur on mobile if it lags */
   .glass {
-    @apply bg-white/40 backdrop-blur-xl border border-white/20;
+    @apply bg-white/70 border border-white/20;
+    @apply backdrop-blur-none sm:backdrop-blur-xl;
   }
 
   .glass-card {
-    @apply bg-surface/60 backdrop-blur-md border border-white/30 rounded-card shadow-premium transition-all duration-300;
+    @apply bg-white/60 border border-white/30 rounded-card shadow-premium transition-all duration-300;
+    @apply backdrop-blur-none sm:backdrop-blur-md;
   }
 
   .glass-card:hover {
-    @apply shadow-premium -translate-y-2 border-primary/30;
+    @apply lg:shadow-premium lg:-translate-y-2 lg:border-primary/30;
   }
 
   .btn {
@@ -46,15 +59,18 @@
   }
 
   .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary-hover hover:-translate-y-0.5 shadow-premium;
+    @apply btn bg-primary text-white shadow-premium;
+    @apply hover:bg-primary-hover hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply btn bg-surface text-ink hover:bg-secondary hover:-translate-y-0.5;
+    @apply btn bg-surface text-ink;
+    @apply hover:bg-secondary hover:-translate-y-0.5;
   }
 
   .btn-outline {
-    @apply btn border-2 border-primary/30 text-ink hover:bg-primary/10 hover:border-primary;
+    @apply btn border-2 border-primary/30 text-ink;
+    @apply hover:bg-primary/10 hover:border-primary;
   }
 
   .gradient-text {
@@ -62,7 +78,7 @@
   }
 
   .container-max {
-    @apply max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-12;
+    @apply max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-12;
   }
 }
 

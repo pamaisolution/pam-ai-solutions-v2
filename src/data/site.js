@@ -7,7 +7,7 @@ export const SITE = {
   email: 'pamaisolution@gmail.com',
   phone: '+91 97904 85368',
   phoneHref: 'tel:+919790485368',
-  whatsapp: 'https://chat.whatsapp.com/HzPNGOxzmK9FbMLVwvy54v',
+  whatsapp: 'https://wa.me/919790485368',
   address: 'Coimbatore, Tamil Nadu, India',
 }
 

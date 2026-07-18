@@ -6,21 +6,23 @@ export default function HeroBackground({ bgImage }) {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      {/* Background Image Layer - Original Color - Positioned to hide watermark more aggressively */}
+      {/* Background Image Layer - Optimized for Performance */}
       <div
-        className="absolute inset-0 bg-cover bg-no-repeat bg-[center_top_15%]"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          transform: 'scale(1.2)', // Increased zoom to ensure watermark is pushed completely out
+          /* Disable heavy transform on very small screens if it causes lag */
+          transform: window.innerWidth > 768 ? 'scale(1.2)' : 'scale(1.1)',
+          backgroundPosition: '50% 15%'
         }}
       />
 
       {/* Darker overlay for text readability */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Grid Pattern */}
+      {/* Grid Pattern - Subtle */}
       <div
-        className="absolute inset-0 opacity-[0.05]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)',
           backgroundSize: '40px 40px'
