@@ -20,13 +20,7 @@ function Counter({ value, suffix, label }) {
 
 export default function WhyChooseUs() {
   return (
-    <section
-      className="relative section-py overflow-hidden"
-      style={{
-        clipPath: 'ellipse(160% 100% at 50% 0%)',
-        WebkitClipPath: 'ellipse(160% 100% at 50% 0%)'
-      }}
-    >
+    <section className="relative section-py overflow-hidden">
       {/* Background Image Layer */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

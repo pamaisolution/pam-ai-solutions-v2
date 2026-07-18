@@ -8,13 +8,7 @@ export default function PageHeader({ eyebrow, title, description, className, bgI
   const backgroundImage = bgImage || heroBg
 
   return (
-    <section
-      className={cn("relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-32 z-20", className)}
-      style={{
-        clipPath: 'ellipse(180% 100% at 50% 0%)',
-        WebkitClipPath: 'ellipse(180% 100% at 50% 0%)'
-      }}
-    >
+    <section className={cn("relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24 z-20", className)}>
       {/* Background Image Layer - Original Color - Positioned to hide watermark more aggressively */}
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-[center_top_15%]"

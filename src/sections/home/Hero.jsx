@@ -15,13 +15,7 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section
-      className="relative overflow-hidden pt-28 pb-32 lg:pt-36 lg:pb-48 z-20"
-      style={{
-        clipPath: 'ellipse(160% 100% at 50% 0%)',
-        WebkitClipPath: 'ellipse(160% 100% at 50% 0%)'
-      }}
-    >
+    <section className="relative overflow-hidden pt-28 pb-24 lg:pt-36 lg:pb-32 z-20">
       <HeroBackground bgImage={homeBg} />
 
       <Container className="relative z-10">

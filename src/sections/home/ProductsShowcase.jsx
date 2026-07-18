@@ -9,14 +9,7 @@ export default function ProductsShowcase({ bgImage }) {
   const backgroundImage = bgImage || defaultInnovationsBg
 
   return (
-    <section
-      id="products"
-      className="relative section-py overflow-hidden z-10"
-      style={{
-        clipPath: 'ellipse(170% 100% at 50% 0%)',
-        WebkitClipPath: 'ellipse(170% 100% at 50% 0%)'
-      }}
-    >
+    <section id="products" className="relative section-py overflow-hidden z-10">
       {/* Background Image Layer */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
