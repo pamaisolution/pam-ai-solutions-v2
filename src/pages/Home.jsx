@@ -2,7 +2,6 @@ import Seo from '@/components/common/Seo'
 import Hero from '@/sections/home/Hero'
 import ServicesGrid from '@/sections/home/ServicesGrid'
 import WhyChooseUs from '@/sections/home/WhyChooseUs'
-import PricingSection from '@/sections/shared/PricingSection'
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <Hero />
       <ServicesGrid compact />
       <WhyChooseUs />
-      <PricingSection />
     </>
   )
 }

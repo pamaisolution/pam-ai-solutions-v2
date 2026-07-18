@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { FaInstagram, FaLinkedinIn, FaXTwitter, FaGithub } from 'react-icons/fa6'
-import { Mail, Phone, Send } from 'lucide-react'
+import { Send } from 'lucide-react'
 import { SITE, SOCIALS, FOOTER_LINKS, NAV_LINKS } from '@/data/site'
 import { SERVICES } from '@/data/services'
-import { PRODUCTS } from '@/data/products'
 import Container from '@/components/ui/Container'
 import Logo from './Logo'
 
@@ -18,6 +17,7 @@ const SOCIAL_ICONS = {
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+  const location = useLocation()
 
   const handleSubscribe = (e) => {
     e.preventDefault()
@@ -26,8 +26,15 @@ export default function Footer() {
     setEmail('')
   }
 
+  // If clicking a link to the current page, scroll to top
+  const handleLinkClick = (to) => {
+    if (location.pathname === to) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   return (
-    <footer className="bg-white rounded-t-[40px] shadow-[0_-20px_50px_rgba(113,201,206,0.1)] mt-20">
+    <footer className="bg-white rounded-t-[40px] shadow-[0_-20px_50px_rgba(113,201,206,0.1)] mt-0 relative z-10">
       <Container className="py-20 lg:py-24">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4 flex flex-col gap-6">
@@ -61,7 +68,11 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               {NAV_LINKS.map((link) => (
                 <li key={link.to}>
-                  <Link to={link.to} className="text-[15px] text-ink-muted hover:text-primary transition-all">
+                  <Link
+                    to={link.to}
+                    onClick={() => handleLinkClick(link.to)}
+                    className="text-[15px] text-ink-muted hover:text-primary transition-all"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -126,7 +137,12 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap items-center justify-center lg:justify-end gap-x-6 gap-y-3">
             {FOOTER_LINKS.legal.map((link) => (
-              <Link key={link.to} to={link.to} className="text-[14px] text-ink-muted hover:text-primary whitespace-nowrap">
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => handleLinkClick(link.to)}
+                className="text-[14px] text-ink-muted hover:text-primary whitespace-nowrap"
+              >
                 {link.label}
               </Link>
             ))}

@@ -15,7 +15,7 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-24 lg:pt-36 lg:pb-32 z-20">
+    <section className="relative overflow-hidden pt-8 pb-20 lg:pt-10 lg:pb-32 z-20">
       <HeroBackground bgImage={homeBg} />
 
       <Container className="relative z-10">

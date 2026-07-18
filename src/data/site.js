@@ -33,7 +33,6 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   company: [
     { label: 'About Us', to: '/about' },
-    { label: 'Pricing', to: '/pricing' },
     { label: 'Contact', to: '/contact' },
   ],
   legal: [

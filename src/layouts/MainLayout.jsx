@@ -8,10 +8,18 @@ export default function MainLayout() {
   return (
     <div className="flex min-h-screen flex-col bg-bg">
       <ScrollToTop />
+      {/* Navbar is fixed, so it stays at z-50 */}
       <Navbar />
-      <main className="flex-1 pt-24">
+
+      {/*
+        The main content area.
+        pt-20 (80px) on mobile and pt-24 (96px) on desktop
+        to account for the fixed floating navbar height.
+      */}
+      <main className="flex-1 pt-20 lg:pt-24 relative z-10">
         <Outlet />
       </main>
+
       <Footer />
       <WhatsAppButton />
     </div>
