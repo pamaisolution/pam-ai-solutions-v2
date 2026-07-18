@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-[#71C9CE]/15;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink-muted font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-ink tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-ink;
+  }
+}
+
+@layer components {
+  .section-py {
+    @apply py-[50px] sm:py-[70px] lg:py-[100px];
+  }
+
+  .glass {
+    @apply bg-white/40 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-card {
+    @apply bg-surface/60 backdrop-blur-md border border-white/30 rounded-card shadow-premium transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    @apply shadow-premium -translate-y-2 border-primary/30;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn px-8 py-4 font-heading font-bold text-sm transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-hover hover:-translate-y-0.5 shadow-premium;
+  }
+
+  .btn-secondary {
+    @apply btn bg-surface text-ink hover:bg-secondary hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary/30 text-ink hover:bg-primary/10 hover:border-primary;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-ink;
+  }
+
+  .container-max {
+    @apply max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-12;
+  }
+}
+
+@layer utilities {
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+}
